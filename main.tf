@@ -23,7 +23,7 @@ resource "docker_image" "nginx_image" {
 # Step 3: Create Docker Container
 resource "docker_container" "nginx_container" {
   name  = "terraform-nginx"
-  image = docker_image.nginx_image.latest
+  image = docker_image.nginx_image.image_id
   ports {
     internal = 80
     external = 8080
